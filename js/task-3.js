@@ -19,24 +19,9 @@ const images = [
 
 const galleryRef = document.querySelector("#gallery");
 galleryRef.classList.add("gallery");
-console.log(galleryRef);
 
-// const fgalleryRef = images.map((image) => {
-//   const imgRef = document.createElement("li");
-//   imgRef.insertAdjacentHTML(
-//     "afterbegin",
-//     `<img src = '${image.url}' alt = '${image.alt}'>`
-//   );
-//   return imgRef;
-// });
+const galleryItem = ({ url, alt }) =>
+  `<li><img src="${url}" width = 300 alt="${alt}" </li>`;
+const gallerySum = images.reduce((acc, item) => acc + galleryItem(item), "");
 
-// galleryRef.append(...fgalleryRef);
-
-const fgalleryRef = images.map((image) => {
-  const imgRef = document.createElement("li");
-  imgRef.textContent = galleryRef.insertAdjacentHTML(
-    "afterbegin",
-    `<li> <img src = '${image.url}' width="300" alt = '${image.alt}'></li>`
-  );
-  return imgRef;
-});
+galleryRef.insertAdjacentHTML("afterbegin", gallerySum);

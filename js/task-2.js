@@ -8,7 +8,6 @@ const ingredients = [
   "Приправы",
 ];
 const ingredientsRef = document.querySelector("#ingredients");
-console.log(ingredientsRef);
 
 const fIngredientRef = (ingredient) => {
   const ingRef = document.createElement("li");
